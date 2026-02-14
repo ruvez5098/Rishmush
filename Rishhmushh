@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hazara ❤️ Ruvez</title>
+<title>Hazara ❤️</title>
 
 <style>
 *{
@@ -16,137 +16,183 @@
 body{
     height:100vh;
     overflow:hidden;
-    background:black;
+    background:radial-gradient(circle at bottom, #0d0d1a, #000000 80%);
+    color:white;
 }
 
-/* MAIN BACKGROUND */
-.container{
-    position:relative;
-    width:100%;
-    height:100vh;
-    background:url("couple.jpg") no-repeat center center/cover;
-}
-
-/* DARK CINEMATIC OVERLAY */
-.container::before{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:radial-gradient(circle at center, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
-}
-
-/* HEART FRAME */
-.frame{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:url("bg-hearts.jpg") no-repeat center center/cover;
-    opacity:0.25;
-}
-
-/* CONTENT */
+/* CENTER CONTENT */
 .content{
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
     text-align:center;
-    color:white;
-    z-index:2;
-    animation:fadeIn 3s ease forwards;
+    z-index:10;
+    padding:20px;
 }
 
 h1{
-    font-size:45px;
-    letter-spacing:2px;
-    margin-bottom:20px;
-    text-shadow:0 0 25px #ff4d6d;
+    font-size:48px;
+    line-height:1.2;
+    text-shadow:0 0 25px rgba(255,0,80,0.8);
 }
 
 p{
+    margin-top:20px;
+    max-width:600px;
+    opacity:0.9;
     font-size:18px;
-    max-width:500px;
-    margin:auto;
-    opacity:0.85;
+    line-height:1.6;
+}
+
+/* GLOWING END LINE */
+.infinity{
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+    color:#ff4d6d;
+    text-shadow:0 0 20px #ff003c;
+    animation:glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px #ff003c; }
+    to{ text-shadow:0 0 35px #ff4d6d; }
 }
 
 /* BUTTON */
 button{
     margin-top:30px;
-    padding:14px 35px;
+    padding:15px 40px;
     border:none;
-    border-radius:40px;
+    border-radius:50px;
     background:linear-gradient(45deg,#ff003c,#ff4d6d);
     color:white;
     font-size:16px;
     cursor:pointer;
     transition:0.4s;
-    box-shadow:0 0 20px #ff003c;
+    box-shadow:0 0 25px #ff003c;
 }
 
 button:hover{
     transform:scale(1.1);
-    box-shadow:0 0 40px #ff003c;
 }
 
-/* FLOATING PARTICLES */
-.particle{
+/* MOON */
+.moon{
     position:absolute;
-    width:4px;
-    height:4px;
+    top:80px;
+    right:100px;
+    width:130px;
+    height:130px;
+    background:radial-gradient(circle at 30% 30%, #fff, #ddd 40%, #bbb 70%);
+    border-radius:50%;
+    box-shadow:0 0 60px rgba(255,255,255,0.8),
+               0 0 120px rgba(255,255,255,0.4);
+    animation:moonGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes moonGlow{
+    from{ box-shadow:0 0 40px rgba(255,255,255,0.6),
+                      0 0 80px rgba(255,255,255,0.3); }
+    to{ box-shadow:0 0 80px rgba(255,255,255,1),
+                    0 0 150px rgba(255,255,255,0.6); }
+}
+
+/* STARS */
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
     background:white;
     border-radius:50%;
-    opacity:0.6;
-    animation:float 10s linear infinite;
+    animation:twinkle 2s infinite alternate;
 }
 
-@keyframes float{
-    from{
-        transform:translateY(100vh);
+@keyframes twinkle{
+    from{opacity:0.2;}
+    to{opacity:1;}
+}
+
+/* SHOOTING STAR */
+.shooting-star{
+    position:absolute;
+    width:150px;
+    height:2px;
+    background:linear-gradient(-45deg, white, rgba(255,255,255,0));
+    opacity:0;
+    transform:rotate(-45deg);
+    animation:shoot 6s linear infinite;
+}
+
+@keyframes shoot{
+    0%{
+        top:0;
+        left:80%;
         opacity:0;
     }
-    to{
-        transform:translateY(-10vh);
+    10%{
         opacity:1;
     }
-}
-
-@keyframes fadeIn{
-    from{opacity:0; transform:translate(-50%,-40%);}
-    to{opacity:1; transform:translate(-50%,-50%);}
+    30%{
+        top:40%;
+        left:20%;
+        opacity:0;
+    }
+    100%{
+        opacity:0;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <div class="frame"></div>
+<div class="moon"></div>
 
-    <div class="content">
-        <h1>Hazara Risha Muskan ❤️ Ruvez</h1>
-        <p>
-            In a world full of chaos, you are my peace.
-            Under every star, in every heartbeat,
-            our love shines brighter than the universe.
-        </p>
-        <button onclick="loveMessage()">Forever Mine 💍</button>
+<div class="content">
+    <h1>Hazara Risha Muskan ❤️</h1>
+
+    <p>
+        You are as radiant as the moon that softly lights the night sky,
+        glowing with a calm beauty that brings peace to my world.
+        Just like the stars that shimmer endlessly in the darkness,
+        you shine with a light that guides my heart no matter how far I wander.
+        In every quiet night breeze and every sparkling constellation,
+        I see pieces of your warmth, your strength, and your love.
+        You are my moon in the darkness,
+        my brightest star in the infinite sky,
+        and the light that makes my universe complete.
+    </p>
+
+    <div class="infinity">
+        I Love You Infinity My Princess ♾️❤️👑💖✨🌙🌟💍
     </div>
+
+    <button onclick="loveMessage()">Forever 💍</button>
 </div>
 
 <script>
 function loveMessage(){
-    alert("You are my always and forever ❤️");
+    alert("My Princess, I Love You Infinity ♾️❤️👑💖✨🌙🌟");
 }
 
-/* Create Floating Particles */
-for(let i=0;i<40;i++){
-    let particle=document.createElement("div");
-    particle.className="particle";
-    particle.style.left=Math.random()*100+"vw";
-    particle.style.animationDuration=(5+Math.random()*5)+"s";
-    document.body.appendChild(particle);
+/* Create Twinkling Stars */
+for(let i=0;i<90;i++){
+    let star=document.createElement("div");
+    star.className="star";
+    star.style.top=Math.random()*100+"vh";
+    star.style.left=Math.random()*100+"vw";
+    star.style.animationDuration=(1+Math.random()*2)+"s";
+    document.body.appendChild(star);
+}
+
+/* Create Shooting Stars */
+for(let i=0;i<4;i++){
+    let shoot=document.createElement("div");
+    shoot.className="shooting-star";
+    shoot.style.animationDelay=(Math.random()*6)+"s";
+    document.body.appendChild(shoot);
 }
 </script>
 
