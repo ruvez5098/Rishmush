@@ -3,166 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Risha Muskan 💖</title>
+<title>Risha ❤️ Ruvez</title>
 
 <style>
 body{
     margin:0;
     padding:0;
-    background:linear-gradient(to top,#000814,#001d3d,#003566);
-    font-family:Arial, Helvetica, sans-serif;
-    color:white;
     overflow:hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at 50% 20%, #0b1d3a 0%, #020b1a 60%, #000 100%);
+    color:white;
 }
 
-/* SKY BACKGROUND */
+/* SKY */
 .sky{
     position:fixed;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
     z-index:0;
-    overflow:hidden;
 }
 
-/* STARS */
+/* REALISTIC STARS */
 .star{
     position:absolute;
-    width:2px;
-    height:2px;
+    width:1.5px;
+    height:1.5px;
     background:white;
     border-radius:50%;
-    animation:twinkle 2s infinite alternate;
+    opacity:0.8;
+    animation:twinkle 3s infinite alternate;
 }
 
 @keyframes twinkle{
-    from{opacity:0.3;}
+    from{opacity:0.2;}
     to{opacity:1;}
 }
 
 /* SHOOTING STAR */
 .shooting-star{
     position:absolute;
-    width:3px;
-    height:3px;
+    width:2px;
+    height:2px;
     background:white;
     border-radius:50%;
-    box-shadow:0 0 10px white, 0 0 20px white, 0 0 40px white;
-    animation:shoot 1.2s linear forwards;
+    box-shadow:0 0 10px white,0 0 20px white;
+    animation:shoot 1.5s linear forwards;
 }
 
 @keyframes shoot{
     0%{
-        transform:translate(0,0) rotate(45deg);
+        transform:translate(0,0) rotate(35deg);
         opacity:1;
     }
     100%{
-        transform:translate(1000px,1000px) rotate(45deg);
+        transform:translate(800px,400px) rotate(35deg);
         opacity:0;
     }
 }
 
-/* HERO SECTION */
+/* MOON */
+.moon{
+    position:absolute;
+    top:80px;
+    right:120px;
+    width:120px;
+    height:120px;
+    background:radial-gradient(circle,#fff,#ddd);
+    border-radius:50%;
+    box-shadow:0 0 40px #fff,0 0 80px #fff;
+    z-index:1;
+}
+
+/* HEART SECTION */
 .hero{
     position:relative;
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-top:80px;
+    height:70vh;
     z-index:2;
 }
 
-/* HEART TEXT STYLE */
-.heart-text{
-    position:absolute;
-    font-weight:bold;
-    font-size:18px;
-    white-space:nowrap;
-}
-
-/* LEFT SIDE NAME */
-.left-name{
-    color:#ff2f92;
-    left:calc(50% - 190px);
-    top:40px;
-    transform:rotate(-35deg);
-    text-shadow:0 0 15px #ff2f92;
-}
-
-/* RIGHT SIDE NAME */
-.right-name{
-    color:#00cfff;
-    right:calc(50% - 190px);
-    top:40px;
-    transform:rotate(35deg);
-    text-shadow:0 0 15px #00cfff;
-}
-
-/* SVG HEART */
 svg{
-    width:400px;
-    height:350px;
+    width:420px;
+    height:380px;
 }
 
 .path{
     fill:none;
-    stroke-width:6;
+    stroke-width:4;
     stroke-linecap:round;
     stroke-dasharray:1500;
     stroke-dashoffset:1500;
-    animation:draw 3s ease-in-out forwards;
+    animation:draw 4s ease forwards;
 }
 
 .pink{
     stroke:#ff2f92;
-    filter:drop-shadow(0 0 10px #ff2f92)
-           drop-shadow(0 0 20px #ff2f92);
+    filter:drop-shadow(0 0 8px #ff2f92)
+           drop-shadow(0 0 18px #ff2f92);
 }
 
 .blue{
     stroke:#00cfff;
-    filter:drop-shadow(0 0 10px #00cfff)
-           drop-shadow(0 0 20px #00cfff);
+    filter:drop-shadow(0 0 8px #00cfff)
+           drop-shadow(0 0 18px #00cfff);
 }
 
 @keyframes draw{
     to{stroke-dashoffset:0;}
 }
 
+/* NAMES */
+.name{
+    position:absolute;
+    font-weight:600;
+    font-size:18px;
+    letter-spacing:2px;
+}
+
+.left-name{
+    left:calc(50% - 200px);
+    top:110px;
+    transform:rotate(-35deg);
+    color:#ff8fc7;
+    text-shadow:0 0 10px #ff2f92;
+}
+
+.right-name{
+    right:calc(50% - 200px);
+    top:110px;
+    transform:rotate(35deg);
+    color:#6fdfff;
+    text-shadow:0 0 10px #00cfff;
+}
+
 /* GRASS */
 .grass{
     position:fixed;
     bottom:0;
-    left:0;
     width:100%;
-    height:120px;
-    background:linear-gradient(to top,#14532d,#166534,#15803d);
+    height:160px;
+    background:linear-gradient(to top,#0b3d0b,#145214,#1a5f1a);
+    box-shadow:0 -20px 50px rgba(0,0,0,0.8) inset;
     z-index:1;
 }
 
 /* PANDAS */
 .pandas{
     position:fixed;
-    bottom:70px;
+    bottom:60px;
     width:100%;
     display:flex;
     justify-content:center;
-    align-items:flex-end;
-    gap:60px;
+    gap:80px;
     z-index:2;
 }
 
 .panda{
-    transform:rotate(-10deg);
-}
-
-.panda-big{
-    font-size:120px;
-}
-
-.panda-small{
-    font-size:80px;
+    width:150px;
+    transform:rotate(-8deg);
+    filter:drop-shadow(0 10px 15px rgba(0,0,0,0.7));
 }
 </style>
 </head>
@@ -170,49 +171,40 @@ svg{
 <body>
 
 <div class="sky"></div>
+<div class="moon"></div>
 
 <div class="hero">
 
-    <!-- Names forming heart sides -->
-    <div class="heart-text left-name">
-        Hazara Risha Muskan
-    </div>
+    <div class="name left-name">Hazara Risha Muskan</div>
+    <div class="name right-name">Ruvez Abdul Rahman</div>
 
-    <div class="heart-text right-name">
-        Ruvez Abdul Rahman
-    </div>
-
-    <!-- Neon Heart -->
     <svg viewBox="0 0 400 350">
-        <!-- Left Pink -->
         <path class="path pink"
         d="M200 300 C 50 180, 50 60, 200 120" />
-        
-        <!-- Right Blue -->
         <path class="path blue"
         d="M200 300 C 350 180, 350 60, 200 120" />
     </svg>
 
 </div>
 
-<!-- Pandas -->
 <div class="pandas">
-    <div class="panda panda-big">🐼</div>
-    <div class="panda panda-small">🐼</div>
+    <!-- Replace src with real panda image links if you want -->
+    <img class="panda" src="https://i.imgur.com/4AiXzf8.png">
+    <img class="panda" src="https://i.imgur.com/4AiXzf8.png">
 </div>
 
 <div class="grass"></div>
 
 <script>
-const sky = document.querySelector(".sky");
+const sky=document.querySelector(".sky");
 
-/* Create twinkling stars */
-for(let i=0;i<150;i++){
+/* Create realistic stars */
+for(let i=0;i<200;i++){
     let star=document.createElement("div");
     star.className="star";
     star.style.top=Math.random()*100+"vh";
     star.style.left=Math.random()*100+"vw";
-    star.style.animationDuration=(Math.random()*2+1)+"s";
+    star.style.animationDuration=(Math.random()*3+2)+"s";
     sky.appendChild(star);
 }
 
@@ -220,16 +212,12 @@ for(let i=0;i<150;i++){
 function createShootingStar(){
     let star=document.createElement("div");
     star.className="shooting-star";
-
-    star.style.top=Math.random()*30+"vh";
+    star.style.top=Math.random()*40+"vh";
     star.style.left=Math.random()*100+"vw";
-
     sky.appendChild(star);
-
-    setTimeout(()=>{star.remove();},1200);
+    setTimeout(()=>star.remove(),1500);
 }
-
-setInterval(createShootingStar, 2500);
+setInterval(createShootingStar,4000);
 </script>
 
 </body>
