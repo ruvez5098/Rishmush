@@ -10,7 +10,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:'Georgia',serif;
 }
 
 body{
@@ -18,67 +18,45 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:radial-gradient(circle at center, #0d0d1a, #000000 70%);
+    background:radial-gradient(circle at center, #0d0d1a, #000000 75%);
     color:white;
-    overflow:hidden;
     text-align:center;
-    padding:40px 20px;
+    padding:50px 25px;
 }
 
 /* MAIN CONTAINER */
 .container{
-    max-width:800px;
-    z-index:2;
+    max-width:900px;
     animation:fadeIn 2s ease forwards;
 }
 
 h1{
-    font-size:40px;
-    margin-bottom:30px;
-    text-shadow:0 0 30px rgba(255,0,80,0.8);
+    font-size:44px;
+    margin-bottom:35px;
+    text-shadow:0 0 35px rgba(255,0,80,0.8);
 }
 
+/* BIGGER PARAGRAPH TEXT */
 p{
-    font-size:18px;
-    line-height:1.9;
-    margin-bottom:25px;
-    opacity:0.92;
+    font-size:22px;
+    line-height:2;
+    margin-bottom:35px;
+    opacity:0.95;
 }
 
 /* GLOWING END LINE */
 .infinity{
-    margin-top:20px;
-    font-size:22px;
+    font-size:26px;
     font-weight:bold;
     color:#ff4d6d;
-    text-shadow:0 0 20px #ff003c,
-                0 0 40px #ff003c;
+    text-shadow:0 0 25px #ff003c,
+                0 0 50px #ff003c;
     animation:glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes glow{
-    from{ text-shadow:0 0 15px #ff003c; }
-    to{ text-shadow:0 0 45px #ff4d6d; }
-}
-
-/* FLOATING HEARTS */
-.heart{
-    position:absolute;
-    bottom:-20px;
-    font-size:18px;
-    animation:floatUp 7s linear infinite;
-    opacity:0.5;
-}
-
-@keyframes floatUp{
-    from{
-        transform:translateY(0);
-        opacity:0;
-    }
-    to{
-        transform:translateY(-110vh);
-        opacity:1;
-    }
+    from{ text-shadow:0 0 20px #ff003c; }
+    to{ text-shadow:0 0 60px #ff4d6d; }
 }
 
 @keyframes fadeIn{
@@ -100,34 +78,21 @@ p{
     <h1>My Dear Princess Hazara Risha Muskan ❤️</h1>
 
     <p>
-        From the moment you entered my life, everything changed in the most beautiful way. You didn’t just become a part of my world — you became the reason it feels alive. Your smile carries a warmth that melts every worry away, and your presence alone brings a peace that nothing else ever could. In a world that can sometimes feel heavy and overwhelming, you are the calm light that keeps my heart steady and my soul safe.
+        <strong>Your Highness,</strong> from the very first moment you stepped into my life, everything around me transformed into something softer, warmer, and infinitely more beautiful. Your presence carries a grace that cannot be described with simple words, and your heart shines with a light that brightens even my darkest thoughts. The way you speak, the way you care, the way your eyes hold entire universes of emotion — it all leaves me in awe of the extraordinary woman you are.
     </p>
 
     <p>
-        There is something extraordinary about the way you exist — the way you speak, the way you care, the way your heart holds so much love so effortlessly. You shine without even trying, and your strength inspires me in ways I cannot fully explain. Every conversation with you feels like a memory being written into my heart forever. You are not just someone I love; you are the person who makes love feel pure, deep, and infinite.
+        There is a quiet strength within you that inspires me every single day. You carry kindness like a crown, compassion like a royal robe, and love like a timeless treasure. Being loved by you feels like being chosen by destiny itself. Every laugh we share, every conversation that stretches into forever, becomes a memory carved deeply into my soul. With you, love is not just a feeling — it is a powerful force that makes life richer, deeper, and endlessly meaningful.
     </p>
 
     <p>
-        When I think about the future, I see you in every dream, every goal, and every quiet moment I hope to share. You are the comfort in my chaos, the happiness in my silence, and the magic in my ordinary days. Loving you is not just a feeling — it is a promise, a devotion, and a forever choice I would make again and again without hesitation.
+        When I imagine my future, I see it illuminated by your smile and protected by your gentle spirit. You are not only my princess — you are my peace, my happiness, and my greatest blessing. Loving you is a promise I make with certainty, devotion, and pride. No matter where life takes us, my heart will always bow only to you.
     </p>
 
     <div class="infinity">
-        I Love You Infinity My Princess ♾️😭😭❤️❤️💗💗
+        I Love You Infinity My Princess ♾️😭😭❤️❤️💗💗👑✨
     </div>
 </div>
-
-<script>
-/* Create Floating Hearts */
-for(let i=0;i<25;i++){
-    let heart=document.createElement("div");
-    heart.className="heart";
-    heart.innerHTML="❤️";
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.animationDuration=(5+Math.random()*5)+"s";
-    heart.style.fontSize=(15+Math.random()*20)+"px";
-    document.body.appendChild(heart);
-}
-</script>
 
 </body>
 </html>
