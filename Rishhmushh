@@ -3,221 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Risha ❤️ Ruvez</title>
+<title>Hazara ❤️ Ruvez</title>
 
 <style>
-body{
+*{
     margin:0;
     padding:0;
-    overflow:hidden;
-    font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at 50% 20%, #0b1d3a 0%, #020b1a 60%, #000 100%);
-    color:white;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-/* SKY */
-.sky{
-    position:fixed;
+body{
+    height:100vh;
+    overflow:hidden;
+    background:black;
+}
+
+/* MAIN BACKGROUND */
+.container{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background:url("couple.jpg") no-repeat center center/cover;
+}
+
+/* DARK CINEMATIC OVERLAY */
+.container::before{
+    content:"";
+    position:absolute;
     width:100%;
     height:100%;
-    z-index:0;
+    background:radial-gradient(circle at center, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
 }
 
-/* REALISTIC STARS */
-.star{
+/* HEART FRAME */
+.frame{
     position:absolute;
-    width:1.5px;
-    height:1.5px;
+    width:100%;
+    height:100%;
+    background:url("bg-hearts.jpg") no-repeat center center/cover;
+    opacity:0.25;
+}
+
+/* CONTENT */
+.content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:white;
+    z-index:2;
+    animation:fadeIn 3s ease forwards;
+}
+
+h1{
+    font-size:45px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+    text-shadow:0 0 25px #ff4d6d;
+}
+
+p{
+    font-size:18px;
+    max-width:500px;
+    margin:auto;
+    opacity:0.85;
+}
+
+/* BUTTON */
+button{
+    margin-top:30px;
+    padding:14px 35px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(45deg,#ff003c,#ff4d6d);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.4s;
+    box-shadow:0 0 20px #ff003c;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 40px #ff003c;
+}
+
+/* FLOATING PARTICLES */
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
     background:white;
     border-radius:50%;
-    opacity:0.8;
-    animation:twinkle 3s infinite alternate;
+    opacity:0.6;
+    animation:float 10s linear infinite;
 }
 
-@keyframes twinkle{
-    from{opacity:0.2;}
-    to{opacity:1;}
-}
-
-/* SHOOTING STAR */
-.shooting-star{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:white;
-    border-radius:50%;
-    box-shadow:0 0 10px white,0 0 20px white;
-    animation:shoot 1.5s linear forwards;
-}
-
-@keyframes shoot{
-    0%{
-        transform:translate(0,0) rotate(35deg);
-        opacity:1;
-    }
-    100%{
-        transform:translate(800px,400px) rotate(35deg);
+@keyframes float{
+    from{
+        transform:translateY(100vh);
         opacity:0;
     }
+    to{
+        transform:translateY(-10vh);
+        opacity:1;
+    }
 }
 
-/* MOON */
-.moon{
-    position:absolute;
-    top:80px;
-    right:120px;
-    width:120px;
-    height:120px;
-    background:radial-gradient(circle,#fff,#ddd);
-    border-radius:50%;
-    box-shadow:0 0 40px #fff,0 0 80px #fff;
-    z-index:1;
-}
-
-/* HEART SECTION */
-.hero{
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:70vh;
-    z-index:2;
-}
-
-svg{
-    width:420px;
-    height:380px;
-}
-
-.path{
-    fill:none;
-    stroke-width:4;
-    stroke-linecap:round;
-    stroke-dasharray:1500;
-    stroke-dashoffset:1500;
-    animation:draw 4s ease forwards;
-}
-
-.pink{
-    stroke:#ff2f92;
-    filter:drop-shadow(0 0 8px #ff2f92)
-           drop-shadow(0 0 18px #ff2f92);
-}
-
-.blue{
-    stroke:#00cfff;
-    filter:drop-shadow(0 0 8px #00cfff)
-           drop-shadow(0 0 18px #00cfff);
-}
-
-@keyframes draw{
-    to{stroke-dashoffset:0;}
-}
-
-/* NAMES */
-.name{
-    position:absolute;
-    font-weight:600;
-    font-size:18px;
-    letter-spacing:2px;
-}
-
-.left-name{
-    left:calc(50% - 200px);
-    top:110px;
-    transform:rotate(-35deg);
-    color:#ff8fc7;
-    text-shadow:0 0 10px #ff2f92;
-}
-
-.right-name{
-    right:calc(50% - 200px);
-    top:110px;
-    transform:rotate(35deg);
-    color:#6fdfff;
-    text-shadow:0 0 10px #00cfff;
-}
-
-/* GRASS */
-.grass{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    height:160px;
-    background:linear-gradient(to top,#0b3d0b,#145214,#1a5f1a);
-    box-shadow:0 -20px 50px rgba(0,0,0,0.8) inset;
-    z-index:1;
-}
-
-/* PANDAS */
-.pandas{
-    position:fixed;
-    bottom:60px;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    gap:80px;
-    z-index:2;
-}
-
-.panda{
-    width:150px;
-    transform:rotate(-8deg);
-    filter:drop-shadow(0 10px 15px rgba(0,0,0,0.7));
+@keyframes fadeIn{
+    from{opacity:0; transform:translate(-50%,-40%);}
+    to{opacity:1; transform:translate(-50%,-50%);}
 }
 </style>
 </head>
 
 <body>
 
-<div class="sky"></div>
-<div class="moon"></div>
+<div class="container">
+    <div class="frame"></div>
 
-<div class="hero">
-
-    <div class="name left-name">Hazara Risha Muskan</div>
-    <div class="name right-name">Ruvez Abdul Rahman</div>
-
-    <svg viewBox="0 0 400 350">
-        <path class="path pink"
-        d="M200 300 C 50 180, 50 60, 200 120" />
-        <path class="path blue"
-        d="M200 300 C 350 180, 350 60, 200 120" />
-    </svg>
-
+    <div class="content">
+        <h1>Hazara Risha Muskan ❤️ Ruvez</h1>
+        <p>
+            In a world full of chaos, you are my peace.
+            Under every star, in every heartbeat,
+            our love shines brighter than the universe.
+        </p>
+        <button onclick="loveMessage()">Forever Mine 💍</button>
+    </div>
 </div>
-
-<div class="pandas">
-    <!-- Replace src with real panda image links if you want -->
-    <img class="panda" src="https://i.imgur.com/4AiXzf8.png">
-    <img class="panda" src="https://i.imgur.com/4AiXzf8.png">
-</div>
-
-<div class="grass"></div>
 
 <script>
-const sky=document.querySelector(".sky");
-
-/* Create realistic stars */
-for(let i=0;i<200;i++){
-    let star=document.createElement("div");
-    star.className="star";
-    star.style.top=Math.random()*100+"vh";
-    star.style.left=Math.random()*100+"vw";
-    star.style.animationDuration=(Math.random()*3+2)+"s";
-    sky.appendChild(star);
+function loveMessage(){
+    alert("You are my always and forever ❤️");
 }
 
-/* Shooting stars */
-function createShootingStar(){
-    let star=document.createElement("div");
-    star.className="shooting-star";
-    star.style.top=Math.random()*40+"vh";
-    star.style.left=Math.random()*100+"vw";
-    sky.appendChild(star);
-    setTimeout(()=>star.remove(),1500);
+/* Create Floating Particles */
+for(let i=0;i<40;i++){
+    let particle=document.createElement("div");
+    particle.className="particle";
+    particle.style.left=Math.random()*100+"vw";
+    particle.style.animationDuration=(5+Math.random()*5)+"s";
+    document.body.appendChild(particle);
 }
-setInterval(createShootingStar,4000);
 </script>
 
 </body>
