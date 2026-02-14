@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hazara Risha Muskan ❤️</title>
+<title>My Dear Princess ❤️</title>
 
 <style>
 *{
@@ -14,7 +14,7 @@
 }
 
 body{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -22,31 +22,32 @@ body{
     color:white;
     overflow:hidden;
     text-align:center;
-    padding:20px;
+    padding:40px 20px;
 }
 
 /* MAIN CONTAINER */
 .container{
-    max-width:750px;
+    max-width:800px;
     z-index:2;
     animation:fadeIn 2s ease forwards;
 }
 
 h1{
-    font-size:42px;
-    margin-bottom:25px;
-    text-shadow:0 0 25px rgba(255,0,80,0.8);
+    font-size:40px;
+    margin-bottom:30px;
+    text-shadow:0 0 30px rgba(255,0,80,0.8);
 }
 
 p{
     font-size:18px;
-    line-height:1.8;
-    opacity:0.9;
+    line-height:1.9;
+    margin-bottom:25px;
+    opacity:0.92;
 }
 
 /* GLOWING END LINE */
 .infinity{
-    margin-top:30px;
+    margin-top:20px;
     font-size:22px;
     font-weight:bold;
     color:#ff4d6d;
@@ -56,8 +57,8 @@ p{
 }
 
 @keyframes glow{
-    from{ text-shadow:0 0 10px #ff003c; }
-    to{ text-shadow:0 0 40px #ff4d6d; }
+    from{ text-shadow:0 0 15px #ff003c; }
+    to{ text-shadow:0 0 45px #ff4d6d; }
 }
 
 /* FLOATING HEARTS */
@@ -65,8 +66,8 @@ p{
     position:absolute;
     bottom:-20px;
     font-size:18px;
-    animation:floatUp 6s linear infinite;
-    opacity:0.6;
+    animation:floatUp 7s linear infinite;
+    opacity:0.5;
 }
 
 @keyframes floatUp{
@@ -96,10 +97,18 @@ p{
 <body>
 
 <div class="container">
-    <h1>Hazara Risha Muskan ❤️</h1>
+    <h1>My Dear Princess Hazara Risha Muskan ❤️</h1>
 
     <p>
-        You are as radiant as the moon that softly lights the night sky, glowing with a calm beauty that brings peace to my world. Just like the stars that shimmer endlessly in the darkness, you shine with a light that guides my heart no matter how far I wander. In every quiet night breeze and every sparkling constellation, I see pieces of your warmth, your strength, and your love. You are my moon in the darkness, my brightest star in the infinite sky, and the light that makes my universe complete.
+        From the moment you entered my life, everything changed in the most beautiful way. You didn’t just become a part of my world — you became the reason it feels alive. Your smile carries a warmth that melts every worry away, and your presence alone brings a peace that nothing else ever could. In a world that can sometimes feel heavy and overwhelming, you are the calm light that keeps my heart steady and my soul safe.
+    </p>
+
+    <p>
+        There is something extraordinary about the way you exist — the way you speak, the way you care, the way your heart holds so much love so effortlessly. You shine without even trying, and your strength inspires me in ways I cannot fully explain. Every conversation with you feels like a memory being written into my heart forever. You are not just someone I love; you are the person who makes love feel pure, deep, and infinite.
+    </p>
+
+    <p>
+        When I think about the future, I see you in every dream, every goal, and every quiet moment I hope to share. You are the comfort in my chaos, the happiness in my silence, and the magic in my ordinary days. Loving you is not just a feeling — it is a promise, a devotion, and a forever choice I would make again and again without hesitation.
     </p>
 
     <div class="infinity">
@@ -109,13 +118,13 @@ p{
 
 <script>
 /* Create Floating Hearts */
-for(let i=0;i<20;i++){
+for(let i=0;i<25;i++){
     let heart=document.createElement("div");
     heart.className="heart";
     heart.innerHTML="❤️";
     heart.style.left=Math.random()*100+"vw";
-    heart.style.animationDuration=(4+Math.random()*4)+"s";
-    heart.style.fontSize=(15+Math.random()*15)+"px";
+    heart.style.animationDuration=(5+Math.random()*5)+"s";
+    heart.style.fontSize=(15+Math.random()*20)+"px";
     document.body.appendChild(heart);
 }
 </script>
