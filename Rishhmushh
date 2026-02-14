@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hazara ❤️</title>
+<title>Hazara Risha Muskan ❤️</title>
 
 <style>
 *{
@@ -15,132 +15,79 @@
 
 body{
     height:100vh;
-    overflow:hidden;
-    background:radial-gradient(circle at bottom, #0d0d1a, #000000 80%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle at center, #0d0d1a, #000000 70%);
     color:white;
-}
-
-/* CENTER CONTENT */
-.content{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
+    overflow:hidden;
     text-align:center;
-    z-index:10;
     padding:20px;
 }
 
+/* MAIN CONTAINER */
+.container{
+    max-width:750px;
+    z-index:2;
+    animation:fadeIn 2s ease forwards;
+}
+
 h1{
-    font-size:48px;
-    line-height:1.2;
+    font-size:42px;
+    margin-bottom:25px;
     text-shadow:0 0 25px rgba(255,0,80,0.8);
 }
 
 p{
-    margin-top:20px;
-    max-width:600px;
-    opacity:0.9;
     font-size:18px;
-    line-height:1.6;
+    line-height:1.8;
+    opacity:0.9;
 }
 
 /* GLOWING END LINE */
 .infinity{
-    margin-top:20px;
-    font-size:20px;
+    margin-top:30px;
+    font-size:22px;
     font-weight:bold;
     color:#ff4d6d;
-    text-shadow:0 0 20px #ff003c;
+    text-shadow:0 0 20px #ff003c,
+                0 0 40px #ff003c;
     animation:glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes glow{
     from{ text-shadow:0 0 10px #ff003c; }
-    to{ text-shadow:0 0 35px #ff4d6d; }
+    to{ text-shadow:0 0 40px #ff4d6d; }
 }
 
-/* BUTTON */
-button{
-    margin-top:30px;
-    padding:15px 40px;
-    border:none;
-    border-radius:50px;
-    background:linear-gradient(45deg,#ff003c,#ff4d6d);
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.4s;
-    box-shadow:0 0 25px #ff003c;
-}
-
-button:hover{
-    transform:scale(1.1);
-}
-
-/* MOON */
-.moon{
+/* FLOATING HEARTS */
+.heart{
     position:absolute;
-    top:80px;
-    right:100px;
-    width:130px;
-    height:130px;
-    background:radial-gradient(circle at 30% 30%, #fff, #ddd 40%, #bbb 70%);
-    border-radius:50%;
-    box-shadow:0 0 60px rgba(255,255,255,0.8),
-               0 0 120px rgba(255,255,255,0.4);
-    animation:moonGlow 4s ease-in-out infinite alternate;
+    bottom:-20px;
+    font-size:18px;
+    animation:floatUp 6s linear infinite;
+    opacity:0.6;
 }
 
-@keyframes moonGlow{
-    from{ box-shadow:0 0 40px rgba(255,255,255,0.6),
-                      0 0 80px rgba(255,255,255,0.3); }
-    to{ box-shadow:0 0 80px rgba(255,255,255,1),
-                    0 0 150px rgba(255,255,255,0.6); }
-}
-
-/* STARS */
-.star{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:white;
-    border-radius:50%;
-    animation:twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle{
-    from{opacity:0.2;}
-    to{opacity:1;}
-}
-
-/* SHOOTING STAR */
-.shooting-star{
-    position:absolute;
-    width:150px;
-    height:2px;
-    background:linear-gradient(-45deg, white, rgba(255,255,255,0));
-    opacity:0;
-    transform:rotate(-45deg);
-    animation:shoot 6s linear infinite;
-}
-
-@keyframes shoot{
-    0%{
-        top:0;
-        left:80%;
+@keyframes floatUp{
+    from{
+        transform:translateY(0);
         opacity:0;
     }
-    10%{
+    to{
+        transform:translateY(-110vh);
         opacity:1;
     }
-    30%{
-        top:40%;
-        left:20%;
+}
+
+@keyframes fadeIn{
+    from{
         opacity:0;
+        transform:translateY(20px);
     }
-    100%{
-        opacity:0;
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 }
 </style>
@@ -148,51 +95,28 @@ button:hover{
 
 <body>
 
-<div class="moon"></div>
-
-<div class="content">
+<div class="container">
     <h1>Hazara Risha Muskan ❤️</h1>
 
     <p>
-        You are as radiant as the moon that softly lights the night sky,
-        glowing with a calm beauty that brings peace to my world.
-        Just like the stars that shimmer endlessly in the darkness,
-        you shine with a light that guides my heart no matter how far I wander.
-        In every quiet night breeze and every sparkling constellation,
-        I see pieces of your warmth, your strength, and your love.
-        You are my moon in the darkness,
-        my brightest star in the infinite sky,
-        and the light that makes my universe complete.
+        You are as radiant as the moon that softly lights the night sky, glowing with a calm beauty that brings peace to my world. Just like the stars that shimmer endlessly in the darkness, you shine with a light that guides my heart no matter how far I wander. In every quiet night breeze and every sparkling constellation, I see pieces of your warmth, your strength, and your love. You are my moon in the darkness, my brightest star in the infinite sky, and the light that makes my universe complete.
     </p>
 
     <div class="infinity">
-        I Love You Infinity My Princess ♾️❤️👑💖✨🌙🌟💍
+        I Love You Infinity My Princess ♾️😭😭❤️❤️💗💗
     </div>
-
-    <button onclick="loveMessage()">Forever 💍</button>
 </div>
 
 <script>
-function loveMessage(){
-    alert("My Princess, I Love You Infinity ♾️❤️👑💖✨🌙🌟");
-}
-
-/* Create Twinkling Stars */
-for(let i=0;i<90;i++){
-    let star=document.createElement("div");
-    star.className="star";
-    star.style.top=Math.random()*100+"vh";
-    star.style.left=Math.random()*100+"vw";
-    star.style.animationDuration=(1+Math.random()*2)+"s";
-    document.body.appendChild(star);
-}
-
-/* Create Shooting Stars */
-for(let i=0;i<4;i++){
-    let shoot=document.createElement("div");
-    shoot.className="shooting-star";
-    shoot.style.animationDelay=(Math.random()*6)+"s";
-    document.body.appendChild(shoot);
+/* Create Floating Hearts */
+for(let i=0;i<20;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(4+Math.random()*4)+"s";
+    heart.style.fontSize=(15+Math.random()*15)+"px";
+    document.body.appendChild(heart);
 }
 </script>
 
