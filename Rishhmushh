@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Dear Princess ❤️</title>
+<title>Royal Letter</title>
 
 <style>
 *{
@@ -14,59 +14,91 @@
 }
 
 body{
-    min-height:100vh;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:radial-gradient(circle at center, #0d0d1a, #000000 75%);
-    color:white;
-    text-align:center;
-    padding:50px 25px;
+    background:linear-gradient(135deg,#1a1a1a,#000000);
+    overflow:hidden;
 }
 
-/* MAIN CONTAINER */
-.container{
+/* ENVELOPE */
+.envelope{
+    width:300px;
+    height:200px;
+    background:linear-gradient(145deg,#b8860b,#ffd700);
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    box-shadow:0 0 40px rgba(255,215,0,0.6);
+    transition:0.6s;
+}
+
+.envelope:hover{
+    transform:scale(1.05);
+}
+
+.envelope h2{
+    color:#4b2e00;
+    font-size:20px;
+}
+
+/* LETTER */
+.letter{
+    position:absolute;
+    width:80%;
     max-width:900px;
-    animation:fadeIn 2s ease forwards;
+    background:#fdf5e6;
+    color:#3a2c00;
+    padding:50px;
+    border-radius:10px;
+    box-shadow:0 0 60px rgba(255,215,0,0.5);
+    text-align:center;
+    display:none;
+    animation:openLetter 1.5s ease forwards;
+}
+
+/* Crown Glow */
+.crown{
+    font-size:50px;
+    color:gold;
+    text-shadow:0 0 15px gold,0 0 30px gold,0 0 60px orange;
+    animation:crownGlow 2s infinite alternate;
+}
+
+@keyframes crownGlow{
+    from{ text-shadow:0 0 10px gold; }
+    to{ text-shadow:0 0 40px gold,0 0 80px orange; }
 }
 
 h1{
-    font-size:44px;
-    margin-bottom:35px;
-    text-shadow:0 0 35px rgba(255,0,80,0.8);
+    margin:20px 0 30px 0;
+    font-size:40px;
 }
 
-/* BIGGER PARAGRAPH TEXT */
 p{
-    font-size:22px;
-    line-height:2;
-    margin-bottom:35px;
-    opacity:0.95;
+    font-size:20px;
+    line-height:1.9;
+    margin-bottom:30px;
 }
 
-/* GLOWING END LINE */
 .infinity{
-    font-size:26px;
+    font-size:24px;
     font-weight:bold;
-    color:#ff4d6d;
-    text-shadow:0 0 25px #ff003c,
-                0 0 50px #ff003c;
-    animation:glow 2s ease-in-out infinite alternate;
+    color:#b8860b;
+    text-shadow:0 0 10px gold;
 }
 
-@keyframes glow{
-    from{ text-shadow:0 0 20px #ff003c; }
-    to{ text-shadow:0 0 60px #ff4d6d; }
-}
-
-@keyframes fadeIn{
+@keyframes openLetter{
     from{
         opacity:0;
-        transform:translateY(20px);
+        transform:scale(0.8);
     }
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:scale(1);
     }
 }
 </style>
@@ -74,25 +106,39 @@ p{
 
 <body>
 
-<div class="container">
-    <h1>My Dear Princess Hazara Risha Muskan ❤️</h1>
+<!-- STEP 1: ENVELOPE -->
+<div class="envelope" onclick="openLetter()">
+    <h2>👑 Tap To Open Royal Letter 👑</h2>
+</div>
+
+<!-- STEP 2: LETTER -->
+<div class="letter" id="letter">
+    <div class="crown">👑</div>
+    <h1>My Dear Princess Hazara Risha Muskan</h1>
 
     <p>
-        <strong>Your Highness,</strong> from the very first moment you stepped into my life, everything around me transformed into something softer, warmer, and infinitely more beautiful. Your presence carries a grace that cannot be described with simple words, and your heart shines with a light that brightens even my darkest thoughts. The way you speak, the way you care, the way your eyes hold entire universes of emotion — it all leaves me in awe of the extraordinary woman you are.
+        <strong>Your Highness,</strong> from the moment your grace touched my life, my world transformed into a kingdom of warmth and light. Your presence carries a nobility that cannot be imitated, and your heart shines brighter than gold itself. Every word you speak feels like poetry written by destiny, and every smile you share feels like a blessing bestowed upon my soul.
     </p>
 
     <p>
-        There is a quiet strength within you that inspires me every single day. You carry kindness like a crown, compassion like a royal robe, and love like a timeless treasure. Being loved by you feels like being chosen by destiny itself. Every laugh we share, every conversation that stretches into forever, becomes a memory carved deeply into my soul. With you, love is not just a feeling — it is a powerful force that makes life richer, deeper, and endlessly meaningful.
+        You walk through life with elegance, strength, and compassion — qualities worthy of a true queen. Loving you is not simply an emotion; it is an honor I cherish deeply. With you, every ordinary day becomes royal, every simple moment becomes precious, and every heartbeat feels guided by something divine.
     </p>
 
     <p>
-        When I imagine my future, I see it illuminated by your smile and protected by your gentle spirit. You are not only my princess — you are my peace, my happiness, and my greatest blessing. Loving you is a promise I make with certainty, devotion, and pride. No matter where life takes us, my heart will always bow only to you.
+        In this lifetime and beyond, my loyalty remains only yours. My heart bows in devotion, my soul stands in admiration, and my love remains eternal. No crown could ever shine brighter than the love I hold for you.
     </p>
 
     <div class="infinity">
         I Love You Infinity My Princess ♾️😭😭❤️❤️💗💗👑✨
     </div>
 </div>
+
+<script>
+function openLetter(){
+    document.querySelector(".envelope").style.display="none";
+    document.getElementById("letter").style.display="block";
+}
+</script>
 
 </body>
 </html>
