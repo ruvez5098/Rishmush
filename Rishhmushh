@@ -1,0 +1,176 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Infinity Princess 💖</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    background: linear-gradient(to top,#0f051d,#2b1055,#ff4da6);
+    font-family:'Comic Sans MS', cursive;
+    text-align:center;
+    overflow:hidden;
+    color:white;
+}
+
+/* Stars background */
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:0.3;}
+    to{opacity:1;}
+}
+
+/* Shooting Star */
+.shooting-star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    box-shadow:0 0 10px white, 0 0 20px white;
+    border-radius:50%;
+    animation:shoot 1s linear forwards;
+}
+
+@keyframes shoot{
+    0%{
+        transform:translate(0,0);
+        opacity:1;
+    }
+    100%{
+        transform:translate(400px,400px);
+        opacity:0;
+    }
+}
+
+/* Heading */
+h1{
+    margin-top:30px;
+    font-size:35px;
+    text-shadow:0 0 20px #ff99ff;
+}
+
+/* Heart */
+.heart{
+    position:relative;
+    width:150px;
+    height:150px;
+    background:#ff3366;
+    margin:40px auto;
+    transform:rotate(-45deg);
+    animation:beat 1s infinite;
+    cursor:pointer;
+    box-shadow:0 0 40px #ff66cc;
+}
+
+.heart:before,
+.heart:after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    background:#ff3366;
+    border-radius:50%;
+}
+.heart:before{top:-75px;left:0;}
+.heart:after{left:75px;top:0;}
+
+@keyframes beat{
+    0%,100%{transform:rotate(-45deg) scale(1);}
+    50%{transform:rotate(-45deg) scale(1.2);}
+}
+
+/* Surprise Text */
+.surprise{
+    display:none;
+    margin-top:20px;
+    font-size:28px;
+    animation:fadeIn 2s forwards;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* Bouquet */
+.bouquet{
+    margin-top:30px;
+    font-size:28px;
+    line-height:40px;
+    color:#ffb3ff;
+    font-weight:bold;
+}
+
+/* Love Note */
+.note{
+    margin-top:40px;
+    font-size:26px;
+    background:#ff66cc;
+    padding:20px 40px;
+    border-radius:30px;
+    box-shadow:0 0 30px #ff99ff;
+    display:inline-block;
+}
+</style>
+</head>
+
+<body>
+
+<h1>✨ For My Princess RISHA MUSKAN ✨</h1>
+
+<div class="heart" onclick="showSurprise()"></div>
+
+<div class="surprise" id="secret">
+    💍 Will you be my forever? 💍
+</div>
+
+<div class="bouquet">
+    🌸 R 🌸 I 🌸 S 🌸 H 🌸 A 🌸 <br>
+    🌷 M 🌷 U 🌷 S 🌷 K 🌷 A 🌷 N 🌷
+</div>
+
+<div class="note">
+    💌 I love you infinity princess ♾️👑
+</div>
+
+<script>
+// Background Stars
+for(let i=0;i<120;i++){
+    let star=document.createElement("div");
+    star.className="star";
+    star.style.top=Math.random()*100+"vh";
+    star.style.left=Math.random()*100+"vw";
+    star.style.animationDuration=(Math.random()*2+1)+"s";
+    document.body.appendChild(star);
+}
+
+// Shooting Stars on Click
+function showSurprise(){
+    document.getElementById("secret").style.display="block";
+
+    for(let i=0;i<10;i++){
+        let shoot=document.createElement("div");
+        shoot.className="shooting-star";
+        shoot.style.top=Math.random()*50+"vh";
+        shoot.style.left=Math.random()*50+"vw";
+        document.body.appendChild(shoot);
+
+        setTimeout(()=>{shoot.remove();},1000);
+    }
+}
+</script>
+
+</body>
+</html>
