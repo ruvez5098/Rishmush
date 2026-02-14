@@ -4,27 +4,26 @@ index.html
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Infinity Princess 💖</title>
+<title>Risha Muskan 💖</title>
 
 <style>
 body{
     margin:0;
     padding:0;
-    background: linear-gradient(to top,#0f051d,#2b1055,#ff4da6);
-    font-family:'Comic Sans MS', cursive;
-    text-align:center;
-    overflow:hidden;
+    background:linear-gradient(to top,#000814,#001d3d,#003566);
+    font-family:Arial, Helvetica, sans-serif;
     color:white;
+    overflow:hidden;
 }
 
-/* Stars background */
+/* STAR BACKGROUND */
 .star{
     position:absolute;
-    width:3px;
-    height:3px;
+    width:2px;
+    height:2px;
     background:white;
     border-radius:50%;
-    animation: twinkle 2s infinite alternate;
+    animation:twinkle 2s infinite alternate;
 }
 
 @keyframes twinkle{
@@ -32,7 +31,7 @@ body{
     to{opacity:1;}
 }
 
-/* Shooting Star */
+/* SHOOTING STAR */
 .shooting-star{
     position:absolute;
     width:3px;
@@ -44,109 +43,160 @@ body{
 }
 
 @keyframes shoot{
-    0%{
-        transform:translate(0,0);
-        opacity:1;
-    }
-    100%{
-        transform:translate(400px,400px);
-        opacity:0;
-    }
+    0%{transform:translate(0,0); opacity:1;}
+    100%{transform:translate(600px,600px); opacity:0;}
 }
 
-/* Heading */
-h1{
-    margin-top:30px;
-    font-size:35px;
-    text-shadow:0 0 20px #ff99ff;
-}
-
-/* Heart */
-.heart{
+/* HERO SECTION */
+.hero{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:40px;
     position:relative;
-    width:150px;
-    height:150px;
-    background:#ff3366;
-    margin:40px auto;
-    transform:rotate(-45deg);
-    animation:beat 1s infinite;
-    cursor:pointer;
-    box-shadow:0 0 40px #ff66cc;
+    z-index:2;
 }
 
-.heart:before,
-.heart:after{
-    content:"";
+/* NEON HEART */
+.heart-container{
+    position:relative;
+    width:420px;
+    height:360px;
+    margin-bottom:30px;
+}
+
+svg{
+    width:100%;
+    height:100%;
+}
+
+.path{
+    fill:none;
+    stroke-width:6;
+    stroke-linecap:round;
+    stroke-dasharray:1500;
+    stroke-dashoffset:1500;
+    animation:draw 3s ease-in-out forwards;
+}
+
+.pink{
+    stroke:#ff2f92;
+    filter:drop-shadow(0 0 10px #ff2f92)
+           drop-shadow(0 0 20px #ff2f92);
+}
+
+.blue{
+    stroke:#00cfff;
+    filter:drop-shadow(0 0 10px #00cfff)
+           drop-shadow(0 0 20px #00cfff);
+}
+
+@keyframes draw{
+    to{stroke-dashoffset:0;}
+}
+
+/* TEXT ON HEART */
+.name{
     position:absolute;
-    width:150px;
-    height:150px;
-    background:#ff3366;
-    border-radius:50%;
-}
-.heart:before{top:-75px;left:0;}
-.heart:after{left:75px;top:0;}
-
-@keyframes beat{
-    0%,100%{transform:rotate(-45deg) scale(1);}
-    50%{transform:rotate(-45deg) scale(1.2);}
-}
-
-/* Surprise Text */
-.surprise{
-    display:none;
-    margin-top:20px;
-    font-size:28px;
+    width:100%;
+    text-align:center;
+    font-weight:bold;
+    letter-spacing:1px;
+    opacity:0;
     animation:fadeIn 2s forwards;
+    animation-delay:3s;
+}
+
+.pink-text{
+    color:#ff2f92;
+    top:30%;
+    text-shadow:0 0 15px #ff2f92;
+}
+
+.blue-text{
+    color:#00cfff;
+    bottom:30%;
+    text-shadow:0 0 15px #00cfff;
 }
 
 @keyframes fadeIn{
-    from{opacity:0;}
     to{opacity:1;}
 }
 
-/* Bouquet */
-.bouquet{
-    margin-top:30px;
-    font-size:28px;
-    line-height:40px;
-    color:#ffb3ff;
-    font-weight:bold;
+/* CENTER PHOTO */
+.circle{
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    overflow:hidden;
+    box-shadow:0 0 60px rgba(255,255,255,0.3);
+    border:4px solid white;
+    cursor:pointer;
 }
 
-/* Love Note */
-.note{
-    margin-top:40px;
-    font-size:26px;
-    background:#ff66cc;
-    padding:20px 40px;
-    border-radius:30px;
-    box-shadow:0 0 30px #ff99ff;
-    display:inline-block;
+.circle img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* PANDAS */
+.pandas{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:50px;
+    z-index:2;
+}
+
+.panda-big{
+    font-size:120px;
+}
+
+.panda-small{
+    font-size:80px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>✨ For My Princess RISHA MUSKAN ✨</h1>
+<div class="hero">
 
-<div class="heart" onclick="showSurprise()"></div>
+    <!-- Neon Heart -->
+    <div class="heart-container">
+        <svg viewBox="0 0 400 350">
+            <!-- Left Pink -->
+            <path class="path pink"
+            d="M200 300 C 50 180, 50 60, 200 120" />
+            
+            <!-- Right Blue -->
+            <path class="path blue"
+            d="M200 300 C 350 180, 350 60, 200 120" />
+        </svg>
 
-<div class="surprise" id="secret">
-    💍 Will you be my forever? 💍
+        <div class="name pink-text">Hazara Risha Muskan</div>
+        <div class="name blue-text">Ruvez Abdul Rahman</div>
+    </div>
+
+    <!-- Center Photo -->
+    <div class="circle" onclick="shootStars()">
+        <img src="photo.jpg" alt="Our Photo">
+    </div>
+
 </div>
 
-<div class="bouquet">
-    🌸 R 🌸 I 🌸 S 🌸 H 🌸 A 🌸 <br>
-    🌷 M 🌷 U 🌷 S 🌷 K 🌷 A 🌷 N 🌷
-</div>
-
-<div class="note">
-    💌 I love you infinity princess ♾️👑
+<!-- Pandas -->
+<div class="pandas">
+    <div class="panda-big">🐼</div>
+    <div class="panda-small">🐼</div>
 </div>
 
 <script>
-// Background Stars
+// Create background stars
 for(let i=0;i<120;i++){
     let star=document.createElement("div");
     star.className="star";
@@ -156,18 +206,16 @@ for(let i=0;i<120;i++){
     document.body.appendChild(star);
 }
 
-// Shooting Stars on Click
-function showSurprise(){
-    document.getElementById("secret").style.display="block";
+// Shooting stars on click
+function shootStars(){
+    for(let i=0;i<12;i++){
+        let star=document.createElement("div");
+        star.className="shooting-star";
+        star.style.top=Math.random()*50+"vh";
+        star.style.left=Math.random()*50+"vw";
+        document.body.appendChild(star);
 
-    for(let i=0;i<10;i++){
-        let shoot=document.createElement("div");
-        shoot.className="shooting-star";
-        shoot.style.top=Math.random()*50+"vh";
-        shoot.style.left=Math.random()*50+"vw";
-        document.body.appendChild(shoot);
-
-        setTimeout(()=>{shoot.remove();},1000);
+        setTimeout(()=>{star.remove();},1000);
     }
 }
 </script>
