@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Letter</title>
+<title>Royal Love Letter</title>
 
 <style>
 *{
@@ -18,87 +18,133 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#1a1a1a,#000000);
+    background:radial-gradient(circle at center,#1a1a1a,#000);
     overflow:hidden;
 }
 
 /* ENVELOPE */
 .envelope{
-    width:300px;
-    height:200px;
+    position:relative;
+    width:320px;
+    height:220px;
     background:linear-gradient(145deg,#b8860b,#ffd700);
-    border-radius:10px;
+    border-radius:12px;
+    box-shadow:0 0 40px rgba(255,215,0,0.7);
+    cursor:pointer;
     display:flex;
     justify-content:center;
     align-items:center;
-    cursor:pointer;
-    box-shadow:0 0 40px rgba(255,215,0,0.6);
     transition:0.6s;
 }
 
-.envelope:hover{
-    transform:scale(1.05);
+.flap{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:50%;
+    background:#daa520;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transition:1s;
 }
 
-.envelope h2{
-    color:#4b2e00;
-    font-size:20px;
+/* Wax Seal */
+.seal{
+    position:absolute;
+    width:70px;
+    height:70px;
+    background:radial-gradient(circle,#8b0000,#4b0000);
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:gold;
+    font-size:28px;
+    box-shadow:0 0 20px rgba(139,0,0,0.8);
+    transition:0.6s;
+}
+
+.seal.break{
+    transform:scale(0);
+    opacity:0;
 }
 
 /* LETTER */
 .letter{
     position:absolute;
-    width:80%;
-    max-width:900px;
+    width:85%;
+    max-width:950px;
     background:#fdf5e6;
     color:#3a2c00;
-    padding:50px;
+    padding:60px;
     border-radius:10px;
-    box-shadow:0 0 60px rgba(255,215,0,0.5);
+    box-shadow:0 0 60px rgba(255,215,0,0.6);
     text-align:center;
     display:none;
-    animation:openLetter 1.5s ease forwards;
+    animation:unfold 1.8s ease forwards;
 }
 
-/* Crown Glow */
+/* Crown */
 .crown{
-    font-size:50px;
+    font-size:55px;
     color:gold;
-    text-shadow:0 0 15px gold,0 0 30px gold,0 0 60px orange;
+    text-shadow:0 0 20px gold,0 0 40px orange,0 0 80px gold;
     animation:crownGlow 2s infinite alternate;
 }
 
 @keyframes crownGlow{
-    from{ text-shadow:0 0 10px gold; }
-    to{ text-shadow:0 0 40px gold,0 0 80px orange; }
+    from{ text-shadow:0 0 15px gold; }
+    to{ text-shadow:0 0 60px gold,0 0 120px orange; }
 }
 
 h1{
-    margin:20px 0 30px 0;
-    font-size:40px;
+    margin:20px 0 35px;
+    font-size:42px;
 }
 
 p{
-    font-size:20px;
-    line-height:1.9;
-    margin-bottom:30px;
+    font-size:21px;
+    line-height:2;
+    margin-bottom:35px;
 }
 
 .infinity{
-    font-size:24px;
+    font-size:26px;
     font-weight:bold;
     color:#b8860b;
-    text-shadow:0 0 10px gold;
+    text-shadow:0 0 15px gold;
 }
 
-@keyframes openLetter{
+/* Unfold animation */
+@keyframes unfold{
     from{
         opacity:0;
-        transform:scale(0.8);
+        transform:scale(0.7) rotateX(60deg);
     }
     to{
         opacity:1;
-        transform:scale(1);
+        transform:scale(1) rotateX(0);
+    }
+}
+
+/* Gold particles */
+.particle{
+    position:absolute;
+    width:5px;
+    height:5px;
+    background:gold;
+    border-radius:50%;
+    opacity:0.6;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    to{
+        transform:translateY(-10vh);
+        opacity:1;
     }
 }
 </style>
@@ -106,26 +152,27 @@ p{
 
 <body>
 
-<!-- STEP 1: ENVELOPE -->
+<!-- ENVELOPE -->
 <div class="envelope" onclick="openLetter()">
-    <h2>👑 Tap To Open Royal Letter 👑</h2>
+    <div class="flap"></div>
+    <div class="seal" id="seal">👑</div>
 </div>
 
-<!-- STEP 2: LETTER -->
+<!-- LETTER -->
 <div class="letter" id="letter">
     <div class="crown">👑</div>
     <h1>My Dear Princess Hazara Risha Muskan</h1>
 
     <p>
-        <strong>Your Highness,</strong> from the moment your grace touched my life, my world transformed into a kingdom of warmth and light. Your presence carries a nobility that cannot be imitated, and your heart shines brighter than gold itself. Every word you speak feels like poetry written by destiny, and every smile you share feels like a blessing bestowed upon my soul.
+        <strong>Your Highness,</strong> from the very first moment you entered my world, everything transformed into something majestic and radiant. Your grace carries a power that no crown could ever match, and your heart shines with a warmth more precious than gold. In your presence, I feel honored, protected, and endlessly inspired.
     </p>
 
     <p>
-        You walk through life with elegance, strength, and compassion — qualities worthy of a true queen. Loving you is not simply an emotion; it is an honor I cherish deeply. With you, every ordinary day becomes royal, every simple moment becomes precious, and every heartbeat feels guided by something divine.
+        You walk with elegance, speak with kindness, and love with a depth that feels eternal. Every smile you share is like sunlight touching a royal palace, and every word you whisper feels like poetry written by destiny itself. Loving you is not simply a feeling — it is a sacred vow I hold with pride.
     </p>
 
     <p>
-        In this lifetime and beyond, my loyalty remains only yours. My heart bows in devotion, my soul stands in admiration, and my love remains eternal. No crown could ever shine brighter than the love I hold for you.
+        My loyalty belongs only to you, my princess. In this life and beyond, my heart will always bow before your love. No kingdom could compare to the empire we build within each other’s hearts.
     </p>
 
     <div class="infinity">
@@ -135,8 +182,21 @@ p{
 
 <script>
 function openLetter(){
-    document.querySelector(".envelope").style.display="none";
-    document.getElementById("letter").style.display="block";
+    document.getElementById("seal").classList.add("break");
+    document.querySelector(".flap").style.transform="rotateX(180deg)";
+    setTimeout(()=>{
+        document.querySelector(".envelope").style.display="none";
+        document.getElementById("letter").style.display="block";
+    },1000);
+}
+
+/* Create gold particles */
+for(let i=0;i<40;i++){
+    let particle=document.createElement("div");
+    particle.className="particle";
+    particle.style.left=Math.random()*100+"vw";
+    particle.style.animationDuration=(4+Math.random()*4)+"s";
+    document.body.appendChild(particle);
 }
 </script>
 
